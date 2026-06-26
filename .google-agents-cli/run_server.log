@@ -1,0 +1,985 @@
+WARNING: The --reload flag is not supported on Windows because it forces Uvicorn to use SelectorEventLoop, which does not support subprocesses (needed for executing tools). Forcing --no-reload.
+2026-06-25 20:39:36,840 - INFO - service_factory.py:266 - Using in-memory memory service
+2026-06-25 20:39:36,840 - INFO - local_storage.py:88 - Using per-agent session storage rooted at C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent
+2026-06-25 20:39:36,841 - INFO - local_storage.py:120 - Using per-agent artifact storage rooted at C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent
+C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\cli\fast_api.py:553: UserWarning: [EXPERIMENTAL] InMemoryCredentialService: This feature is experimental and may change or be removed in future versions without notice. It may introduce breaking changes at any time.
+  credential_service = InMemoryCredentialService()
+C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\auth\credential_service\in_memory_credential_service.py:33: UserWarning: [EXPERIMENTAL] BaseCredentialService: This feature is experimental and may change or be removed in future versions without notice. It may introduce breaking changes at any time.
+  super().__init__()
+INFO:     Started server process [2128]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:18080 (Press CTRL+C to quit)
+INFO:     127.0.0.1:65434 - "GET / HTTP/1.1" 404 Not Found
+2026-06-25 20:39:37,441 - INFO - local_storage.py:64 - Creating local session service at C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\app\.adk\session.db
+2026-06-25 20:39:37,472 - INFO - api_server.py:860 - New session created: b6abfc78-8e4e-4ecf-be25-130870733084
+INFO:     127.0.0.1:65437 - "POST /apps/app/users/cli-user/sessions HTTP/1.1" 200 OK
+2026-06-25 20:39:37,489 - INFO - envs.py:83 - Loaded .env file for app at C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.env
+2026-06-25 20:39:37,494 - INFO - envs.py:83 - Loaded .env file for app at C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.env
+C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\features\_feature_decorator.py:72: UserWarning: [EXPERIMENTAL] feature FeatureName.PLUGGABLE_AUTH is enabled.
+  check_feature_enabled()
+INFO:     127.0.0.1:65440 - "POST /run_sse HTTP/1.1" 200 OK
+AUDIT_LOG: {"timestamp": "2026-06-25T15:09:37.816953Z", "event_type": "SECURITY_CHECK_PASSED", "severity": "INFO", "details": {"employee": "Bob Manager", "role": "Manager"}}
+C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\tools\mcp_tool\mcp_toolset.py:314: UserWarning: [EXPERIMENTAL] feature FeatureName._MCP_GRACEFUL_ERROR_HANDLING is enabled.
+  session = await self._mcp_session_manager.create_session(
+[06/25/26 20:39:38] INFO     Processing request of type           server.py:733
+                             ListToolsRequest                                  
+C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\features\_feature_decorator.py:72: UserWarning: [EXPERIMENTAL] feature FeatureName.BASE_AUTHENTICATED_TOOL is enabled.
+  check_feature_enabled()
+C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\models\llm_request.py:256: UserWarning: [EXPERIMENTAL] feature FeatureName.JSON_SCHEMA_FOR_FUNC_DECL is enabled.
+  declaration = tool._get_declaration()
+2026-06-25 20:39:39,222 - INFO - google_llm.py:208 - Sending out request, model: gemini-2.5-flash-lite, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2026-06-25 20:39:47,598 - ERROR - _node_runner.py:147 - Node execution failed with exception
+Traceback (most recent call last):
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\workflow\_node_runner.py", line 129, in run
+    await self._execute_node(ctx, node_input)
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\workflow\_node_runner.py", line 248, in _execute_node
+    await self._run_node_loop(ctx, node_input)
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\workflow\_node_runner.py", line 262, in _run_node_loop
+    async for event in agen:
+      self._track_event_in_context(event, ctx)
+      await self._enqueue_event(event, ctx)
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\workflow\_base_node.py", line 217, in run
+    async for item in agen:
+    ...<12 lines>...
+        yield Event(output=validated)
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\agents\llm_agent.py", line 559, in _run_impl
+    async for event in agen:
+    ...<4 lines>...
+      yield event
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\workflow\_llm_agent_wrapper.py", line 336, in run_llm_agent_as_node
+    async for event in run_iter:
+      process_llm_agent_output(agent, ctx, event)
+      yield event
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\agents\base_agent.py", line 305, in run_async
+    async for event in agen:
+      yield event
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\agents\llm_agent.py", line 515, in _run_async_impl
+    async for event in agen:
+    ...<5 lines>...
+        should_pause = True
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\flows\llm_flows\base_llm_flow.py", line 881, in run_async
+    async for event in agen:
+      last_event = event
+      yield event
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\flows\llm_flows\base_llm_flow.py", line 960, in _run_one_step_async
+    async for llm_response in agen:
+    ...<13 lines>...
+          yield event
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\flows\llm_flows\base_llm_flow.py", line 1351, in _call_llm_async
+    async for event in agen:
+      yield event
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\flows\llm_flows\base_llm_flow.py", line 1329, in _call_llm_with_tracing
+    async for llm_response in agen:
+    ...<18 lines>...
+      yield llm_response
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\flows\llm_flows\base_llm_flow.py", line 1412, in _run_and_handle_error
+    async for response in agen:
+      yield response
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\flows\llm_flows\base_llm_flow.py", line 410, in _run_and_handle_error
+    raise model_error
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\flows\llm_flows\base_llm_flow.py", line 387, in _run_and_handle_error
+    async for llm_response in agen:
+      tel_ctx.record_llm_response(llm_response)
+      yield llm_response
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\models\google_llm.py", line 272, in generate_content_async
+    response = await self.api_client.aio.models.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\genai\models.py", line 8628, in generate_content
+    return await self._generate_content(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        model=model, contents=contents, config=final_parsed_config
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\genai\models.py", line 7102, in _generate_content
+    response = await self._api_client.async_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        'post', path, request_dict, http_options
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\genai\_api_client.py", line 1657, in async_request
+    result = await self._async_request(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        http_request=http_request, http_options=http_options, stream=False
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\genai\_api_client.py", line 1590, in _async_request
+    return await self._async_retry(  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self._async_request_once, http_request, stream
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\tenacity\asyncio\__init__.py", line 112, in __call__
+    do = await self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\tenacity\asyncio\__init__.py", line 157, in iter
+    result = await action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\tenacity\_utils.py", line 111, in inner
+    return call(*args, **kwargs)
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\tenacity\__init__.py", line 413, in exc_check
+    raise retry_exc.reraise()
+          ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\tenacity\__init__.py", line 184, in reraise
+    raise self.last_attempt.result()
+          ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Ashmit\AppData\Roaming\uv\python\cpython-3.13-windows-x86_64-none\Lib\concurrent\futures\_base.py", line 453, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Ashmit\AppData\Roaming\uv\python\cpython-3.13-windows-x86_64-none\Lib\concurrent\futures\_base.py", line 402, in __get_result
+    raise self._exception
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\tenacity\asyncio\__init__.py", line 116, in __call__
+    result = await fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\genai\_api_client.py", line 1521, in _async_request_once
+    await errors.APIError.raise_for_async_response(response)
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\genai\errors.py", line 247, in raise_for_async_response
+    await cls.raise_error_async(status_code, response_json, response)
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\genai\errors.py", line 271, in raise_error_async
+    raise ServerError(status_code, response_json, response)
+google.genai.errors.ServerError: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+2026-06-25 20:39:47,611 - ERROR - runners.py:839 - Root node expense_approval_workflow failed.
+Traceback (most recent call last):
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\runners.py", line 835, in _cleanup_root_task
+    await task
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\runners.py", line 580, in _drive_root_node
+    raise ctx.error
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\workflow\_node_runner.py", line 129, in run
+    await self._execute_node(ctx, node_input)
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\workflow\_node_runner.py", line 248, in _execute_node
+    await self._run_node_loop(ctx, node_input)
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\workflow\_node_runner.py", line 262, in _run_node_loop
+    async for event in agen:
+      self._track_event_in_context(event, ctx)
+      await self._enqueue_event(event, ctx)
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\workflow\_base_node.py", line 217, in run
+    async for item in agen:
+    ...<12 lines>...
+        yield Event(output=validated)
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\agents\llm_agent.py", line 559, in _run_impl
+    async for event in agen:
+    ...<4 lines>...
+      yield event
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\workflow\_llm_agent_wrapper.py", line 336, in run_llm_agent_as_node
+    async for event in run_iter:
+      process_llm_agent_output(agent, ctx, event)
+      yield event
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\agents\base_agent.py", line 305, in run_async
+    async for event in agen:
+      yield event
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\agents\llm_agent.py", line 515, in _run_async_impl
+    async for event in agen:
+    ...<5 lines>...
+        should_pause = True
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\flows\llm_flows\base_llm_flow.py", line 881, in run_async
+    async for event in agen:
+      last_event = event
+      yield event
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\flows\llm_flows\base_llm_flow.py", line 960, in _run_one_step_async
+    async for llm_response in agen:
+    ...<13 lines>...
+          yield event
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\flows\llm_flows\base_llm_flow.py", line 1351, in _call_llm_async
+    async for event in agen:
+      yield event
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\flows\llm_flows\base_llm_flow.py", line 1329, in _call_llm_with_tracing
+    async for llm_response in agen:
+    ...<18 lines>...
+      yield llm_response
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\flows\llm_flows\base_llm_flow.py", line 1412, in _run_and_handle_error
+    async for response in agen:
+      yield response
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\flows\llm_flows\base_llm_flow.py", line 410, in _run_and_handle_error
+    raise model_error
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\flows\llm_flows\base_llm_flow.py", line 387, in _run_and_handle_error
+    async for llm_response in agen:
+      tel_ctx.record_llm_response(llm_response)
+      yield llm_response
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\models\google_llm.py", line 272, in generate_content_async
+    response = await self.api_client.aio.models.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\genai\models.py", line 8628, in generate_content
+    return await self._generate_content(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        model=model, contents=contents, config=final_parsed_config
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\genai\models.py", line 7102, in _generate_content
+    response = await self._api_client.async_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        'post', path, request_dict, http_options
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\genai\_api_client.py", line 1657, in async_request
+    result = await self._async_request(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        http_request=http_request, http_options=http_options, stream=False
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\genai\_api_client.py", line 1590, in _async_request
+    return await self._async_retry(  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self._async_request_once, http_request, stream
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\tenacity\asyncio\__init__.py", line 112, in __call__
+    do = await self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\tenacity\asyncio\__init__.py", line 157, in iter
+    result = await action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\tenacity\_utils.py", line 111, in inner
+    return call(*args, **kwargs)
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\tenacity\__init__.py", line 413, in exc_check
+    raise retry_exc.reraise()
+          ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\tenacity\__init__.py", line 184, in reraise
+    raise self.last_attempt.result()
+          ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Ashmit\AppData\Roaming\uv\python\cpython-3.13-windows-x86_64-none\Lib\concurrent\futures\_base.py", line 453, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Ashmit\AppData\Roaming\uv\python\cpython-3.13-windows-x86_64-none\Lib\concurrent\futures\_base.py", line 402, in __get_result
+    raise self._exception
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\tenacity\asyncio\__init__.py", line 116, in __call__
+    result = await fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\genai\_api_client.py", line 1521, in _async_request_once
+    await errors.APIError.raise_for_async_response(response)
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\genai\errors.py", line 247, in raise_for_async_response
+    await cls.raise_error_async(status_code, response_json, response)
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\genai\errors.py", line 271, in raise_error_async
+    raise ServerError(status_code, response_json, response)
+google.genai.errors.ServerError: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+2026-06-25 20:39:47,620 - ERROR - api_server.py:1582 - Error in event_generator: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+Traceback (most recent call last):
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\cli\api_server.py", line 1554, in event_generator
+    async for event in agen:
+    ...<25 lines>...
+        yield f"data: {sse_event}\n\n"
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\runners.py", line 1054, in run_async
+    async for event in agen:
+      yield event
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\runners.py", line 594, in _run_node_async
+    await self._cleanup_root_task(task, self.agent.name)
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\runners.py", line 835, in _cleanup_root_task
+    await task
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\runners.py", line 580, in _drive_root_node
+    raise ctx.error
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\workflow\_node_runner.py", line 129, in run
+    await self._execute_node(ctx, node_input)
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\workflow\_node_runner.py", line 248, in _execute_node
+    await self._run_node_loop(ctx, node_input)
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\workflow\_node_runner.py", line 262, in _run_node_loop
+    async for event in agen:
+      self._track_event_in_context(event, ctx)
+      await self._enqueue_event(event, ctx)
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\workflow\_base_node.py", line 217, in run
+    async for item in agen:
+    ...<12 lines>...
+        yield Event(output=validated)
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\agents\llm_agent.py", line 559, in _run_impl
+    async for event in agen:
+    ...<4 lines>...
+      yield event
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\workflow\_llm_agent_wrapper.py", line 336, in run_llm_agent_as_node
+    async for event in run_iter:
+      process_llm_agent_output(agent, ctx, event)
+      yield event
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\agents\base_agent.py", line 305, in run_async
+    async for event in agen:
+      yield event
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\agents\llm_agent.py", line 515, in _run_async_impl
+    async for event in agen:
+    ...<5 lines>...
+        should_pause = True
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\flows\llm_flows\base_llm_flow.py", line 881, in run_async
+    async for event in agen:
+      last_event = event
+      yield event
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\flows\llm_flows\base_llm_flow.py", line 960, in _run_one_step_async
+    async for llm_response in agen:
+    ...<13 lines>...
+          yield event
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\flows\llm_flows\base_llm_flow.py", line 1351, in _call_llm_async
+    async for event in agen:
+      yield event
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\flows\llm_flows\base_llm_flow.py", line 1329, in _call_llm_with_tracing
+    async for llm_response in agen:
+    ...<18 lines>...
+      yield llm_response
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\flows\llm_flows\base_llm_flow.py", line 1412, in _run_and_handle_error
+    async for response in agen:
+      yield response
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\flows\llm_flows\base_llm_flow.py", line 410, in _run_and_handle_error
+    raise model_error
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\flows\llm_flows\base_llm_flow.py", line 387, in _run_and_handle_error
+    async for llm_response in agen:
+      tel_ctx.record_llm_response(llm_response)
+      yield llm_response
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\models\google_llm.py", line 272, in generate_content_async
+    response = await self.api_client.aio.models.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\genai\models.py", line 8628, in generate_content
+    return await self._generate_content(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        model=model, contents=contents, config=final_parsed_config
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\genai\models.py", line 7102, in _generate_content
+    response = await self._api_client.async_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        'post', path, request_dict, http_options
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\genai\_api_client.py", line 1657, in async_request
+    result = await self._async_request(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        http_request=http_request, http_options=http_options, stream=False
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\genai\_api_client.py", line 1590, in _async_request
+    return await self._async_retry(  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self._async_request_once, http_request, stream
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\tenacity\asyncio\__init__.py", line 112, in __call__
+    do = await self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\tenacity\asyncio\__init__.py", line 157, in iter
+    result = await action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\tenacity\_utils.py", line 111, in inner
+    return call(*args, **kwargs)
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\tenacity\__init__.py", line 413, in exc_check
+    raise retry_exc.reraise()
+          ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\tenacity\__init__.py", line 184, in reraise
+    raise self.last_attempt.result()
+          ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Ashmit\AppData\Roaming\uv\python\cpython-3.13-windows-x86_64-none\Lib\concurrent\futures\_base.py", line 453, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Ashmit\AppData\Roaming\uv\python\cpython-3.13-windows-x86_64-none\Lib\concurrent\futures\_base.py", line 402, in __get_result
+    raise self._exception
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\tenacity\asyncio\__init__.py", line 116, in __call__
+    result = await fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\genai\_api_client.py", line 1521, in _async_request_once
+    await errors.APIError.raise_for_async_response(response)
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\genai\errors.py", line 247, in raise_for_async_response
+    await cls.raise_error_async(status_code, response_json, response)
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\genai\errors.py", line 271, in raise_error_async
+    raise ServerError(status_code, response_json, response)
+google.genai.errors.ServerError: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+WARNING: The --reload flag is not supported on Windows because it forces Uvicorn to use SelectorEventLoop, which does not support subprocesses (needed for executing tools). Forcing --no-reload.
+2026-06-25 20:40:02,852 - INFO - service_factory.py:266 - Using in-memory memory service
+2026-06-25 20:40:02,852 - INFO - local_storage.py:88 - Using per-agent session storage rooted at C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent
+2026-06-25 20:40:02,853 - INFO - local_storage.py:120 - Using per-agent artifact storage rooted at C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent
+C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\cli\fast_api.py:553: UserWarning: [EXPERIMENTAL] InMemoryCredentialService: This feature is experimental and may change or be removed in future versions without notice. It may introduce breaking changes at any time.
+  credential_service = InMemoryCredentialService()
+C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\auth\credential_service\in_memory_credential_service.py:33: UserWarning: [EXPERIMENTAL] BaseCredentialService: This feature is experimental and may change or be removed in future versions without notice. It may introduce breaking changes at any time.
+  super().__init__()
+INFO:     Started server process [27588]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:18080 (Press CTRL+C to quit)
+INFO:     127.0.0.1:49187 - "GET / HTTP/1.1" 404 Not Found
+2026-06-25 20:40:03,221 - INFO - envs.py:83 - Loaded .env file for app at C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.env
+2026-06-25 20:40:03,222 - INFO - envs.py:83 - Loaded .env file for app at C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.env
+C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\features\_feature_decorator.py:72: UserWarning: [EXPERIMENTAL] feature FeatureName.PLUGGABLE_AUTH is enabled.
+  check_feature_enabled()
+2026-06-25 20:40:03,268 - INFO - local_storage.py:64 - Creating local session service at C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\app\.adk\session.db
+INFO:     127.0.0.1:49194 - "POST /run_sse HTTP/1.1" 200 OK
+2026-06-25 20:40:03,301 - ERROR - _node_runner.py:147 - Node execution failed with exception
+Traceback (most recent call last):
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\workflow\_node_runner.py", line 129, in run
+    await self._execute_node(ctx, node_input)
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\workflow\_node_runner.py", line 248, in _execute_node
+    await self._run_node_loop(ctx, node_input)
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\workflow\_node_runner.py", line 262, in _run_node_loop
+    async for event in agen:
+      self._track_event_in_context(event, ctx)
+      await self._enqueue_event(event, ctx)
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\workflow\_base_node.py", line 215, in run
+    node_input = self._validate_input_data(node_input)
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\workflow\_base_node.py", line 159, in _validate_input_data
+    return self._validate_schema(data, self.input_schema)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\workflow\_base_node.py", line 140, in _validate_schema
+    validated = TypeAdapter(schema).validate_python(data)
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\pydantic\type_adapter.py", line 441, in validate_python
+    return self.validator.validate_python(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        object,
+        ^^^^^^^
+    ...<6 lines>...
+        by_name=by_name,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+pydantic_core._pydantic_core.ValidationError: 1 validation error for ExpenseSubmission
+  Input should be a valid dictionary or instance of ExpenseSubmission [type=model_type, input_value=Content(
+  parts=[
+    Pa... ),
+  ],
+  role='user'
+), input_type=Content]
+    For further information visit https://errors.pydantic.dev/2.13/v/model_type
+2026-06-25 20:40:03,310 - ERROR - runners.py:839 - Root node expense_approval_workflow failed.
+Traceback (most recent call last):
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\runners.py", line 835, in _cleanup_root_task
+    await task
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\runners.py", line 580, in _drive_root_node
+    raise ctx.error
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\workflow\_node_runner.py", line 129, in run
+    await self._execute_node(ctx, node_input)
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\workflow\_node_runner.py", line 248, in _execute_node
+    await self._run_node_loop(ctx, node_input)
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\workflow\_node_runner.py", line 262, in _run_node_loop
+    async for event in agen:
+      self._track_event_in_context(event, ctx)
+      await self._enqueue_event(event, ctx)
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\workflow\_base_node.py", line 215, in run
+    node_input = self._validate_input_data(node_input)
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\workflow\_base_node.py", line 159, in _validate_input_data
+    return self._validate_schema(data, self.input_schema)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\workflow\_base_node.py", line 140, in _validate_schema
+    validated = TypeAdapter(schema).validate_python(data)
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\pydantic\type_adapter.py", line 441, in validate_python
+    return self.validator.validate_python(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        object,
+        ^^^^^^^
+    ...<6 lines>...
+        by_name=by_name,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+pydantic_core._pydantic_core.ValidationError: 1 validation error for ExpenseSubmission
+  Input should be a valid dictionary or instance of ExpenseSubmission [type=model_type, input_value=Content(
+  parts=[
+    Pa... ),
+  ],
+  role='user'
+), input_type=Content]
+    For further information visit https://errors.pydantic.dev/2.13/v/model_type
+2026-06-25 20:40:03,313 - ERROR - api_server.py:1582 - Error in event_generator: 1 validation error for ExpenseSubmission
+  Input should be a valid dictionary or instance of ExpenseSubmission [type=model_type, input_value=Content(
+  parts=[
+    Pa... ),
+  ],
+  role='user'
+), input_type=Content]
+    For further information visit https://errors.pydantic.dev/2.13/v/model_type
+Traceback (most recent call last):
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\cli\api_server.py", line 1554, in event_generator
+    async for event in agen:
+    ...<25 lines>...
+        yield f"data: {sse_event}\n\n"
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\runners.py", line 1054, in run_async
+    async for event in agen:
+      yield event
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\runners.py", line 594, in _run_node_async
+    await self._cleanup_root_task(task, self.agent.name)
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\runners.py", line 835, in _cleanup_root_task
+    await task
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\runners.py", line 580, in _drive_root_node
+    raise ctx.error
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\workflow\_node_runner.py", line 129, in run
+    await self._execute_node(ctx, node_input)
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\workflow\_node_runner.py", line 248, in _execute_node
+    await self._run_node_loop(ctx, node_input)
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\workflow\_node_runner.py", line 262, in _run_node_loop
+    async for event in agen:
+      self._track_event_in_context(event, ctx)
+      await self._enqueue_event(event, ctx)
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\workflow\_base_node.py", line 215, in run
+    node_input = self._validate_input_data(node_input)
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\workflow\_base_node.py", line 159, in _validate_input_data
+    return self._validate_schema(data, self.input_schema)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\workflow\_base_node.py", line 140, in _validate_schema
+    validated = TypeAdapter(schema).validate_python(data)
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\pydantic\type_adapter.py", line 441, in validate_python
+    return self.validator.validate_python(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        object,
+        ^^^^^^^
+    ...<6 lines>...
+        by_name=by_name,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+pydantic_core._pydantic_core.ValidationError: 1 validation error for ExpenseSubmission
+  Input should be a valid dictionary or instance of ExpenseSubmission [type=model_type, input_value=Content(
+  parts=[
+    Pa... ),
+  ],
+  role='user'
+), input_type=Content]
+    For further information visit https://errors.pydantic.dev/2.13/v/model_type
+WARNING: The --reload flag is not supported on Windows because it forces Uvicorn to use SelectorEventLoop, which does not support subprocesses (needed for executing tools). Forcing --no-reload.
+2026-06-25 20:40:40,797 - INFO - service_factory.py:266 - Using in-memory memory service
+2026-06-25 20:40:40,797 - INFO - local_storage.py:88 - Using per-agent session storage rooted at C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent
+2026-06-25 20:40:40,799 - INFO - local_storage.py:120 - Using per-agent artifact storage rooted at C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent
+C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\cli\fast_api.py:553: UserWarning: [EXPERIMENTAL] InMemoryCredentialService: This feature is experimental and may change or be removed in future versions without notice. It may introduce breaking changes at any time.
+  credential_service = InMemoryCredentialService()
+C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\auth\credential_service\in_memory_credential_service.py:33: UserWarning: [EXPERIMENTAL] BaseCredentialService: This feature is experimental and may change or be removed in future versions without notice. It may introduce breaking changes at any time.
+  super().__init__()
+INFO:     Started server process [32976]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:18080 (Press CTRL+C to quit)
+INFO:     127.0.0.1:49371 - "GET / HTTP/1.1" 404 Not Found
+2026-06-25 20:40:41,300 - INFO - local_storage.py:64 - Creating local session service at C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\app\.adk\session.db
+2026-06-25 20:40:41,320 - INFO - api_server.py:860 - New session created: 1f40bdd0-f65b-4c80-b883-86c1192e4592
+INFO:     127.0.0.1:49374 - "POST /apps/app/users/cli-user/sessions HTTP/1.1" 200 OK
+2026-06-25 20:40:41,336 - INFO - envs.py:83 - Loaded .env file for app at C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.env
+2026-06-25 20:40:41,340 - INFO - envs.py:83 - Loaded .env file for app at C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.env
+C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\features\_feature_decorator.py:72: UserWarning: [EXPERIMENTAL] feature FeatureName.PLUGGABLE_AUTH is enabled.
+  check_feature_enabled()
+INFO:     127.0.0.1:49377 - "POST /run_sse HTTP/1.1" 200 OK
+AUDIT_LOG: {"timestamp": "2026-06-25T15:10:41.675906Z", "event_type": "SECURITY_CHECK_PASSED", "severity": "INFO", "details": {"employee": "Bob Manager", "role": "Manager"}}
+C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\tools\mcp_tool\mcp_toolset.py:314: UserWarning: [EXPERIMENTAL] feature FeatureName._MCP_GRACEFUL_ERROR_HANDLING is enabled.
+  session = await self._mcp_session_manager.create_session(
+[06/25/26 20:40:43] INFO     Processing request of type           server.py:733
+                             ListToolsRequest                                  
+C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\features\_feature_decorator.py:72: UserWarning: [EXPERIMENTAL] feature FeatureName.BASE_AUTHENTICATED_TOOL is enabled.
+  check_feature_enabled()
+C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\models\llm_request.py:256: UserWarning: [EXPERIMENTAL] feature FeatureName.JSON_SCHEMA_FOR_FUNC_DECL is enabled.
+  declaration = tool._get_declaration()
+2026-06-25 20:40:43,517 - INFO - google_llm.py:208 - Sending out request, model: gemini-2.5-flash-lite, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2026-06-25 20:40:44,994 - ERROR - _node_runner.py:147 - Node execution failed with exception
+Traceback (most recent call last):
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\workflow\_node_runner.py", line 129, in run
+    await self._execute_node(ctx, node_input)
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\workflow\_node_runner.py", line 248, in _execute_node
+    await self._run_node_loop(ctx, node_input)
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\workflow\_node_runner.py", line 262, in _run_node_loop
+    async for event in agen:
+      self._track_event_in_context(event, ctx)
+      await self._enqueue_event(event, ctx)
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\workflow\_base_node.py", line 217, in run
+    async for item in agen:
+    ...<12 lines>...
+        yield Event(output=validated)
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\agents\llm_agent.py", line 559, in _run_impl
+    async for event in agen:
+    ...<4 lines>...
+      yield event
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\workflow\_llm_agent_wrapper.py", line 336, in run_llm_agent_as_node
+    async for event in run_iter:
+      process_llm_agent_output(agent, ctx, event)
+      yield event
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\agents\base_agent.py", line 305, in run_async
+    async for event in agen:
+      yield event
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\agents\llm_agent.py", line 515, in _run_async_impl
+    async for event in agen:
+    ...<5 lines>...
+        should_pause = True
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\flows\llm_flows\base_llm_flow.py", line 881, in run_async
+    async for event in agen:
+      last_event = event
+      yield event
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\flows\llm_flows\base_llm_flow.py", line 960, in _run_one_step_async
+    async for llm_response in agen:
+    ...<13 lines>...
+          yield event
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\flows\llm_flows\base_llm_flow.py", line 1351, in _call_llm_async
+    async for event in agen:
+      yield event
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\flows\llm_flows\base_llm_flow.py", line 1329, in _call_llm_with_tracing
+    async for llm_response in agen:
+    ...<18 lines>...
+      yield llm_response
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\flows\llm_flows\base_llm_flow.py", line 1412, in _run_and_handle_error
+    async for response in agen:
+      yield response
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\flows\llm_flows\base_llm_flow.py", line 410, in _run_and_handle_error
+    raise model_error
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\flows\llm_flows\base_llm_flow.py", line 387, in _run_and_handle_error
+    async for llm_response in agen:
+      tel_ctx.record_llm_response(llm_response)
+      yield llm_response
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\models\google_llm.py", line 272, in generate_content_async
+    response = await self.api_client.aio.models.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\genai\models.py", line 8628, in generate_content
+    return await self._generate_content(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        model=model, contents=contents, config=final_parsed_config
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\genai\models.py", line 7102, in _generate_content
+    response = await self._api_client.async_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        'post', path, request_dict, http_options
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\genai\_api_client.py", line 1657, in async_request
+    result = await self._async_request(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        http_request=http_request, http_options=http_options, stream=False
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\genai\_api_client.py", line 1590, in _async_request
+    return await self._async_retry(  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self._async_request_once, http_request, stream
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\tenacity\asyncio\__init__.py", line 112, in __call__
+    do = await self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\tenacity\asyncio\__init__.py", line 157, in iter
+    result = await action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\tenacity\_utils.py", line 111, in inner
+    return call(*args, **kwargs)
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\tenacity\__init__.py", line 413, in exc_check
+    raise retry_exc.reraise()
+          ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\tenacity\__init__.py", line 184, in reraise
+    raise self.last_attempt.result()
+          ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Ashmit\AppData\Roaming\uv\python\cpython-3.13-windows-x86_64-none\Lib\concurrent\futures\_base.py", line 453, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Ashmit\AppData\Roaming\uv\python\cpython-3.13-windows-x86_64-none\Lib\concurrent\futures\_base.py", line 402, in __get_result
+    raise self._exception
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\tenacity\asyncio\__init__.py", line 116, in __call__
+    result = await fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\genai\_api_client.py", line 1521, in _async_request_once
+    await errors.APIError.raise_for_async_response(response)
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\genai\errors.py", line 247, in raise_for_async_response
+    await cls.raise_error_async(status_code, response_json, response)
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\genai\errors.py", line 271, in raise_error_async
+    raise ServerError(status_code, response_json, response)
+google.genai.errors.ServerError: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+2026-06-25 20:40:45,030 - ERROR - runners.py:839 - Root node expense_approval_workflow failed.
+Traceback (most recent call last):
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\runners.py", line 835, in _cleanup_root_task
+    await task
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\runners.py", line 580, in _drive_root_node
+    raise ctx.error
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\workflow\_node_runner.py", line 129, in run
+    await self._execute_node(ctx, node_input)
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\workflow\_node_runner.py", line 248, in _execute_node
+    await self._run_node_loop(ctx, node_input)
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\workflow\_node_runner.py", line 262, in _run_node_loop
+    async for event in agen:
+      self._track_event_in_context(event, ctx)
+      await self._enqueue_event(event, ctx)
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\workflow\_base_node.py", line 217, in run
+    async for item in agen:
+    ...<12 lines>...
+        yield Event(output=validated)
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\agents\llm_agent.py", line 559, in _run_impl
+    async for event in agen:
+    ...<4 lines>...
+      yield event
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\workflow\_llm_agent_wrapper.py", line 336, in run_llm_agent_as_node
+    async for event in run_iter:
+      process_llm_agent_output(agent, ctx, event)
+      yield event
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\agents\base_agent.py", line 305, in run_async
+    async for event in agen:
+      yield event
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\agents\llm_agent.py", line 515, in _run_async_impl
+    async for event in agen:
+    ...<5 lines>...
+        should_pause = True
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\flows\llm_flows\base_llm_flow.py", line 881, in run_async
+    async for event in agen:
+      last_event = event
+      yield event
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\flows\llm_flows\base_llm_flow.py", line 960, in _run_one_step_async
+    async for llm_response in agen:
+    ...<13 lines>...
+          yield event
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\flows\llm_flows\base_llm_flow.py", line 1351, in _call_llm_async
+    async for event in agen:
+      yield event
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\flows\llm_flows\base_llm_flow.py", line 1329, in _call_llm_with_tracing
+    async for llm_response in agen:
+    ...<18 lines>...
+      yield llm_response
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\flows\llm_flows\base_llm_flow.py", line 1412, in _run_and_handle_error
+    async for response in agen:
+      yield response
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\flows\llm_flows\base_llm_flow.py", line 410, in _run_and_handle_error
+    raise model_error
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\flows\llm_flows\base_llm_flow.py", line 387, in _run_and_handle_error
+    async for llm_response in agen:
+      tel_ctx.record_llm_response(llm_response)
+      yield llm_response
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\models\google_llm.py", line 272, in generate_content_async
+    response = await self.api_client.aio.models.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\genai\models.py", line 8628, in generate_content
+    return await self._generate_content(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        model=model, contents=contents, config=final_parsed_config
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\genai\models.py", line 7102, in _generate_content
+    response = await self._api_client.async_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        'post', path, request_dict, http_options
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\genai\_api_client.py", line 1657, in async_request
+    result = await self._async_request(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        http_request=http_request, http_options=http_options, stream=False
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\genai\_api_client.py", line 1590, in _async_request
+    return await self._async_retry(  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self._async_request_once, http_request, stream
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\tenacity\asyncio\__init__.py", line 112, in __call__
+    do = await self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\tenacity\asyncio\__init__.py", line 157, in iter
+    result = await action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\tenacity\_utils.py", line 111, in inner
+    return call(*args, **kwargs)
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\tenacity\__init__.py", line 413, in exc_check
+    raise retry_exc.reraise()
+          ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\tenacity\__init__.py", line 184, in reraise
+    raise self.last_attempt.result()
+          ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Ashmit\AppData\Roaming\uv\python\cpython-3.13-windows-x86_64-none\Lib\concurrent\futures\_base.py", line 453, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Ashmit\AppData\Roaming\uv\python\cpython-3.13-windows-x86_64-none\Lib\concurrent\futures\_base.py", line 402, in __get_result
+    raise self._exception
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\tenacity\asyncio\__init__.py", line 116, in __call__
+    result = await fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\genai\_api_client.py", line 1521, in _async_request_once
+    await errors.APIError.raise_for_async_response(response)
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\genai\errors.py", line 247, in raise_for_async_response
+    await cls.raise_error_async(status_code, response_json, response)
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\genai\errors.py", line 271, in raise_error_async
+    raise ServerError(status_code, response_json, response)
+google.genai.errors.ServerError: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+2026-06-25 20:40:45,046 - ERROR - api_server.py:1582 - Error in event_generator: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+Traceback (most recent call last):
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\cli\api_server.py", line 1554, in event_generator
+    async for event in agen:
+    ...<25 lines>...
+        yield f"data: {sse_event}\n\n"
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\runners.py", line 1054, in run_async
+    async for event in agen:
+      yield event
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\runners.py", line 594, in _run_node_async
+    await self._cleanup_root_task(task, self.agent.name)
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\runners.py", line 835, in _cleanup_root_task
+    await task
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\runners.py", line 580, in _drive_root_node
+    raise ctx.error
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\workflow\_node_runner.py", line 129, in run
+    await self._execute_node(ctx, node_input)
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\workflow\_node_runner.py", line 248, in _execute_node
+    await self._run_node_loop(ctx, node_input)
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\workflow\_node_runner.py", line 262, in _run_node_loop
+    async for event in agen:
+      self._track_event_in_context(event, ctx)
+      await self._enqueue_event(event, ctx)
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\workflow\_base_node.py", line 217, in run
+    async for item in agen:
+    ...<12 lines>...
+        yield Event(output=validated)
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\agents\llm_agent.py", line 559, in _run_impl
+    async for event in agen:
+    ...<4 lines>...
+      yield event
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\workflow\_llm_agent_wrapper.py", line 336, in run_llm_agent_as_node
+    async for event in run_iter:
+      process_llm_agent_output(agent, ctx, event)
+      yield event
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\agents\base_agent.py", line 305, in run_async
+    async for event in agen:
+      yield event
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\agents\llm_agent.py", line 515, in _run_async_impl
+    async for event in agen:
+    ...<5 lines>...
+        should_pause = True
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\flows\llm_flows\base_llm_flow.py", line 881, in run_async
+    async for event in agen:
+      last_event = event
+      yield event
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\flows\llm_flows\base_llm_flow.py", line 960, in _run_one_step_async
+    async for llm_response in agen:
+    ...<13 lines>...
+          yield event
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\flows\llm_flows\base_llm_flow.py", line 1351, in _call_llm_async
+    async for event in agen:
+      yield event
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\flows\llm_flows\base_llm_flow.py", line 1329, in _call_llm_with_tracing
+    async for llm_response in agen:
+    ...<18 lines>...
+      yield llm_response
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\flows\llm_flows\base_llm_flow.py", line 1412, in _run_and_handle_error
+    async for response in agen:
+      yield response
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\flows\llm_flows\base_llm_flow.py", line 410, in _run_and_handle_error
+    raise model_error
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\flows\llm_flows\base_llm_flow.py", line 387, in _run_and_handle_error
+    async for llm_response in agen:
+      tel_ctx.record_llm_response(llm_response)
+      yield llm_response
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\models\google_llm.py", line 272, in generate_content_async
+    response = await self.api_client.aio.models.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\genai\models.py", line 8628, in generate_content
+    return await self._generate_content(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        model=model, contents=contents, config=final_parsed_config
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\genai\models.py", line 7102, in _generate_content
+    response = await self._api_client.async_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        'post', path, request_dict, http_options
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\genai\_api_client.py", line 1657, in async_request
+    result = await self._async_request(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        http_request=http_request, http_options=http_options, stream=False
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\genai\_api_client.py", line 1590, in _async_request
+    return await self._async_retry(  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self._async_request_once, http_request, stream
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\tenacity\asyncio\__init__.py", line 112, in __call__
+    do = await self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\tenacity\asyncio\__init__.py", line 157, in iter
+    result = await action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\tenacity\_utils.py", line 111, in inner
+    return call(*args, **kwargs)
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\tenacity\__init__.py", line 413, in exc_check
+    raise retry_exc.reraise()
+          ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\tenacity\__init__.py", line 184, in reraise
+    raise self.last_attempt.result()
+          ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Ashmit\AppData\Roaming\uv\python\cpython-3.13-windows-x86_64-none\Lib\concurrent\futures\_base.py", line 453, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Ashmit\AppData\Roaming\uv\python\cpython-3.13-windows-x86_64-none\Lib\concurrent\futures\_base.py", line 402, in __get_result
+    raise self._exception
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\tenacity\asyncio\__init__.py", line 116, in __call__
+    result = await fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\genai\_api_client.py", line 1521, in _async_request_once
+    await errors.APIError.raise_for_async_response(response)
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\genai\errors.py", line 247, in raise_for_async_response
+    await cls.raise_error_async(status_code, response_json, response)
+  File "C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\genai\errors.py", line 271, in raise_error_async
+    raise ServerError(status_code, response_json, response)
+google.genai.errors.ServerError: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+WARNING: The --reload flag is not supported on Windows because it forces Uvicorn to use SelectorEventLoop, which does not support subprocesses (needed for executing tools). Forcing --no-reload.
+2026-06-25 20:41:32,907 - INFO - service_factory.py:266 - Using in-memory memory service
+2026-06-25 20:41:32,908 - INFO - local_storage.py:88 - Using per-agent session storage rooted at C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent
+2026-06-25 20:41:32,909 - INFO - local_storage.py:120 - Using per-agent artifact storage rooted at C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent
+C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\cli\fast_api.py:553: UserWarning: [EXPERIMENTAL] InMemoryCredentialService: This feature is experimental and may change or be removed in future versions without notice. It may introduce breaking changes at any time.
+  credential_service = InMemoryCredentialService()
+C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\auth\credential_service\in_memory_credential_service.py:33: UserWarning: [EXPERIMENTAL] BaseCredentialService: This feature is experimental and may change or be removed in future versions without notice. It may introduce breaking changes at any time.
+  super().__init__()
+INFO:     Started server process [38412]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:18080 (Press CTRL+C to quit)
+INFO:     127.0.0.1:57995 - "GET / HTTP/1.1" 404 Not Found
+2026-06-25 20:41:33,513 - INFO - agent_change_handler.py:43 - Change detected in agents directory: C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\cli\api_server.py
+2026-06-25 20:41:33,519 - INFO - local_storage.py:64 - Creating local session service at C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\app\.adk\session.db
+2026-06-25 20:41:33,526 - INFO - api_server.py:860 - New session created: 5964b63a-25df-4535-82ad-5aaafe366127
+INFO:     127.0.0.1:57996 - "POST /apps/app/users/cli-user/sessions HTTP/1.1" 200 OK
+2026-06-25 20:41:33,534 - INFO - envs.py:83 - Loaded .env file for app at C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.env
+2026-06-25 20:41:33,535 - INFO - envs.py:83 - Loaded .env file for app at C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.env
+C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\features\_feature_decorator.py:72: UserWarning: [EXPERIMENTAL] feature FeatureName.PLUGGABLE_AUTH is enabled.
+  check_feature_enabled()
+INFO:     127.0.0.1:57997 - "POST /run_sse HTTP/1.1" 200 OK
+AUDIT_LOG: {"timestamp": "2026-06-25T15:11:33.588970Z", "event_type": "SECURITY_CHECK_PASSED", "severity": "INFO", "details": {"employee": "Bob Manager", "role": "Manager"}}
+C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\tools\mcp_tool\mcp_toolset.py:314: UserWarning: [EXPERIMENTAL] feature FeatureName._MCP_GRACEFUL_ERROR_HANDLING is enabled.
+  session = await self._mcp_session_manager.create_session(
+[06/25/26 20:41:34] INFO     Processing request of type           server.py:733
+                             ListToolsRequest                                  
+C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\features\_feature_decorator.py:72: UserWarning: [EXPERIMENTAL] feature FeatureName.BASE_AUTHENTICATED_TOOL is enabled.
+  check_feature_enabled()
+C:\Users\Ashmit\Desktop\adk-workspace\expense-approval-agent\.venv\Lib\site-packages\google\adk\models\llm_request.py:256: UserWarning: [EXPERIMENTAL] feature FeatureName.JSON_SCHEMA_FOR_FUNC_DECL is enabled.
+  declaration = tool._get_declaration()
+2026-06-25 20:41:34,520 - INFO - google_llm.py:208 - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2026-06-25 20:41:37,004 - INFO - google_llm.py:277 - Response received from the model.
+[06/25/26 20:41:37] INFO     Processing request of type           server.py:733
+                             CallToolRequest                                   
+                    INFO     Processing request of type           server.py:733
+                             CallToolRequest                                   
+2026-06-25 20:41:37,212 - INFO - google_llm.py:208 - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2026-06-25 20:41:48,324 - INFO - google_llm.py:277 - Response received from the model.
+2026-06-25 20:41:48,428 - INFO - google_llm.py:208 - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2026-06-25 20:41:48,428 - INFO - models.py:8635 - AFC is enabled with max remote calls: 10.
+2026-06-25 20:41:54,322 - INFO - google_llm.py:277 - Response received from the model.
+AUDIT_LOG: {"timestamp": "2026-06-25T15:11:54.353293Z", "event_type": "AUDIT_DECISION_ROUTING", "severity": "INFO", "details": {"recommendation": "NEEDS_REVIEW", "total_amount": 650.0}}
+AUDIT_LOG: {"timestamp": "2026-06-25T15:11:54.353444Z", "event_type": "HITL_REVIEW_TRIGGERED", "severity": "INFO", "details": {"employee": "Bob Manager", "total": 650.0}}
+AUDIT_LOG: {"timestamp": "2026-06-25T15:11:54.376981Z", "event_type": "HITL_AWAITING_INPUT", "severity": "INFO", "details": {"interrupt_id": "manager_decision"}}
