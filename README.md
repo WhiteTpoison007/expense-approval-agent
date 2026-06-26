@@ -24,18 +24,18 @@ The agent uses a multi-agent workflow coordinated by an ADK 2.0 graph. The flow 
 
 ```mermaid
 graph TD
-    START([Start]) --> SC[Security Checkpoint <br/> PII scrubbing + Injection check]
+    START([Start]) --> SC["Security Checkpoint: PII scrubbing and Injection check"]
     SC -- SECURITY_EVENT --> SEH[Security Event Handler]
     SC -- OK --> ORCH[Orchestrator Agent]
     
-    MCP[MCP Server <br/> get_employee_policy_limit <br/> query_previous_expenses <br/> lookup_vendor_risk] -.->|Tools| ORCH
+    MCP["MCP Server: limit check, history query, vendor risk lookup"] -.->|Tools| ORCH
     
     ORCH --> RF[Report Formatter Agent]
     RF --> DR{Decision Router}
     
-    DR -- APPROVED (Total <= $500, no violations) --> AH[Approval Handler]
+    DR -- "APPROVED (Total <= $500, no violations)" --> AH[Approval Handler]
     DR -- DENIED --> RH[Rejection Handler]
-    DR -- NEEDS_REVIEW --> HA[Human Approval (HITL)]
+    DR -- NEEDS_REVIEW --> HA["Human Approval (HITL)"]
     
     HA -- yes / approve --> AH
     HA -- no / deny --> RH
