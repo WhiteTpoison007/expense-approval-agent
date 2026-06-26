@@ -155,6 +155,9 @@ make test
    Get-Process -Id (Get-NetTCPConnection -LocalPort 18081, 8090 -ErrorAction SilentlyContinue).OwningProcess | Stop-Process -Force
    ```
 
+## Demo Script
+Refer to [DEMO_SCRIPT.txt](file:///c:/Users/Ashmit/Desktop/adk-workspace/expense-approval-agent/DEMO_SCRIPT.txt) for a step-by-step spoken narration to present this project.
+
 ## Push to GitHub
 
 1. Create a new repo at https://github.com/new
